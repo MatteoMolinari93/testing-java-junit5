@@ -2,7 +2,7 @@ package guru.springframework.sfgpetclinic.controllers;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -29,4 +29,8 @@ public class IndexControllerTest {
 		assertThrows(ValueNotFoundException.class, () -> controller.oupsHandler());
 	}
 
+	@Test
+	void testAssumptionTrue() {
+		assumeTrue("GURU".equalsIgnoreCase("GURU"));
+	}
 }
