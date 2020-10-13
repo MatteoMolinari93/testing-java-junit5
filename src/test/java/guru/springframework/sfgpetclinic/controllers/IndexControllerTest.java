@@ -1,12 +1,10 @@
-package guru.springframework.sfgpetclinic.controller;
+package guru.springframework.sfgpetclinic.controllers;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import guru.springframework.sfgpetclinic.controllers.IndexController;
 
 public class IndexControllerTest {
 	
