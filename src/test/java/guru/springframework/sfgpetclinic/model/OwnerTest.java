@@ -3,11 +3,15 @@ package guru.springframework.sfgpetclinic.model;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.stream.Stream;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.EnumSource;
+import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import guru.springframework.sfgpetclinic.ModelTests;
@@ -51,5 +55,17 @@ public class OwnerTest implements ModelTests {
 	})
 	void testCSVSource(String stateName, int value1, int value2) {
 		System.out.println(stateName + " - " + value1 + " - " + value2);
+	}
+	
+	@DisplayName("Method Provider Test - ")
+	@ParameterizedTest(name = "{displayName} [{index}] {arguments}")
+	@MethodSource("getArgs")
+	void fromMethodTest(String stateName, int value1, int value2) {
+		System.out.println(stateName + " - " + value1 + " - " + value2);
+	}
+	
+	static Stream<Arguments> getArgs() {
+		return Stream.of(Arguments.of("FL", 1, 1),
+				Arguments.of("OH", 1, 1));
 	}
 }
