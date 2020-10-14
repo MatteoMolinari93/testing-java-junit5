@@ -28,8 +28,8 @@ public class PersonTest implements ModelTests {
 		Person person = new Person(1l, "Marvin", "Franz");
 		
 		assertAll("Test Props Set",
-				() -> assertEquals("Marvin2", person.getFirstName(), "First name failed"),
-				() -> assertEquals("Franzsd", person.getLastName(), "Last name failed")
+				() -> assertEquals("Marvin", person.getFirstName(), "First name failed"),
+				() -> assertEquals("Franz", person.getLastName(), "Last name failed")
 				);
 	}
 	
